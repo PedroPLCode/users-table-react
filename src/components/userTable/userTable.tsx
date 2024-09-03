@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../../redux/store';
-import { fetchUsers, setFilter } from '../../redux/userSlice.ts';
+import { fetchUsers, setFilter, User } from '../../redux/userSlice.ts';
 import UserRow from '../UserRow/UserRow.tsx';
 import FilterInputs from '../FilterInputs/FilterInputs.tsx';
+import UserDetails from '../UserDetails/UserDetails.tsx';
 import styles from './UserTable.module.scss';
 
 const UserTable: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
   const { users, filter } = useSelector((state: RootState) => state.users);
+  const [selectedUser, setSelectedUser] = useState<User | null>(null);
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -16,6 +18,14 @@ const UserTable: React.FC = () => {
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>, key: string) => {
     dispatch(setFilter({ key, value: e.target.value }));
+  };
+
+  const handleUserClick = (user: User) => {
+    setSelectedUser(user);
+  };
+
+  const handleCloseDetails = () => {
+    setSelectedUser(null);
   };
 
   const filteredUsers = users.filter(user =>
@@ -39,10 +49,14 @@ const UserTable: React.FC = () => {
         </thead>
         <tbody>
           {filteredUsers.map(user => (
-            <UserRow key={user.id} user={user} />
+            <UserRow key={user.id} user={user} onClick={() => handleUserClick(user)} />
           ))}
         </tbody>
       </table>
+
+      {selectedUser && (
+        <UserDetails user={selectedUser} onClose={handleCloseDetails} />
+      )}
     </div>
   );
 };

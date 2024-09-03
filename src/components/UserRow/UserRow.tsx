@@ -1,21 +1,19 @@
 import React from 'react';
-import styles from './UserRow.module.scss'
+import { User } from '../../redux/userSlice.ts';
+import styles from './UserRow.module.scss';
 
-interface User {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  phone: string;
+interface UserRowProps {
+  user: User;
+  onClick: () => void;
 }
 
-const UserRow: React.FC<{ user: User }> = ({ user }) => {
+const UserRow: React.FC<UserRowProps> = ({ user, onClick }) => {
   return (
-    <tr className={styles.row}>
-      <td className={styles.cell}>{user.name}</td>
-      <td className={styles.cell}>{user.username}</td>
-      <td className={styles.cell}>{user.email}</td>
-      <td className={styles.cell}>{user.phone}</td>
+    <tr className={styles.row} onClick={onClick}>
+      <td>{user.name}</td>
+      <td>{user.username}</td>
+      <td>{user.email}</td>
+      <td>{user.phone}</td>
     </tr>
   );
 };

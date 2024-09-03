@@ -1,25 +1,57 @@
 .tableContainer {
-    padding: 20px;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .table {
     width: 100%;
     border-collapse: collapse;
     
-    thead {
-      background-color: #f4f4f4;
-    }
-  
     th, td {
-      padding: 12px;
+      padding: 12px 15px;
       text-align: left;
-      border-bottom: 1px solid #ddd;
     }
-  
-    tbody tr:hover {
-      background-color: #f9f9f9;
+    
+    th {
+      background-color: #007bff;
+      color: white;
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    
+    tr:hover {
+      background-color: #e9f5ff;
+    }
+    
+    td {
+      border-bottom: 1px solid #ddd;
     }
   }
   
+  th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  td {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  @media (max-width: 768px) {
+    .filterInputs {
+      flex-direction: column;
+    }
+  
+    th, td {
+      padding: 10px 8px;
+    }
+  }  
