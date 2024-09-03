@@ -10,10 +10,10 @@ interface UserRowProps {
 const UserRow: React.FC<UserRowProps> = ({ user, onClick }) => {
   return (
     <tr className={styles.row} onClick={onClick}>
-      <td>{user.name}</td>
-      <td>{user.username}</td>
-      <td>{user.email}</td>
-      <td>{user.phone}</td>
+      <td className={styles.name}>{user.name}</td>
+      <td className={styles.username}>{user.username}</td>
+      <td className={styles.email}>{user.email}</td>
+      <td className={styles.phone}>{user.phone}</td>
     </tr>
   );
 };

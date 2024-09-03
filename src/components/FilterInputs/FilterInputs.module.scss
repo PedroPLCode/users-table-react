@@ -5,25 +5,36 @@
   justify-content: space-between;
   margin-bottom: $margin-base;
   gap: 10px;
-  
-  input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: $font-size-base;
-    transition: all 0.3s ease;
-    
-    &:focus {
-      border-color: $primary-color;
-      box-shadow: 0 0 5px rgba($primary-color, 0.5);
-      outline: none;
-    }
+
+  // Flex direction column for smaller screens
+  @media (max-width: $media-border) {
+    flex-direction: column;
   }
 }
 
-@media (max-width: $media-border) {
-  .filterInputs {
-    flex-direction: column;
+.filterName, .filterUsername, .filterEmail, .filterPhone {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: $font-size-base;
+  transition: all 0.3s ease;
+
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 5px rgba($primary-color, 0.5);
+    outline: none;
+  }
+}
+
+.filterEmail, .filterPhone {
+  @media (max-width: $media-border) {
+    display: none;
+  }
+}
+
+.filterName, .filterUsername {
+  @media (max-width: $media-border) {
+    display: block;
   }
 }

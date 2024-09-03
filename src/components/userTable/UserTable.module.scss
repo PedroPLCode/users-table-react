@@ -23,15 +23,15 @@
     color: white;
     font-weight: 600;
   }
-  
+
   tr:nth-child(even) {
     background-color: #f2f2f2;
   }
-  
+
   tr:hover {
     background-color: #e9f5ff;
   }
-  
+
   td {
     border-bottom: 1px solid #ddd;
   }
@@ -39,7 +39,7 @@
 
 th {
   position: sticky;
-  top: 0;
+  top: $margin-base;
   z-index: 1;
 }
 
@@ -55,5 +55,22 @@ td {
 
   th, td {
     padding: 10px 8px;
+  }
+
+  .email, .phone {
+    display: none;
+  }
+
+  td {
+    display: block;
+    text-align: right;
+
+    &::before {
+      content: attr(data-label);
+      display: block;
+      font-weight: bold;
+      color: $primary-color;
+      text-transform: uppercase;
+    }
   }
 }

@@ -41,10 +41,10 @@ const UserTable: React.FC = () => {
       <table className={styles.table}>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Phone</th>
+            <th className={styles.name}>Name</th>
+            <th className={styles.username}>Username</th>
+            <th className={styles.email}>Email</th>
+            <th className={styles.phone}>Phone</th>
           </tr>
         </thead>
         <tbody>
