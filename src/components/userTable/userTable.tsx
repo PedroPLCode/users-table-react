@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../../redux/store';
 import { fetchUsers, setFilter } from '../../redux/userSlice.ts';
 import UserRow from '../UserRow/UserRow.tsx';
+import FilterInputs from '../FilterInputs/FilterInputs.tsx';
 import styles from './UserTable.module.scss';
 
 const UserTable: React.FC = () => {
@@ -26,13 +27,7 @@ const UserTable: React.FC = () => {
 
   return (
     <div className={styles.tableContainer}>
-      <div className={styles.filterInputs}>
-        <input placeholder="Filter by name" onChange={(e) => handleFilterChange(e, 'name')} />
-        <input placeholder="Filter by username" onChange={(e) => handleFilterChange(e, 'username')} />
-        <input placeholder="Filter by email" onChange={(e) => handleFilterChange(e, 'email')} />
-        <input placeholder="Filter by phone" onChange={(e) => handleFilterChange(e, 'phone')} />
-      </div>
-
+      <FilterInputs onFilterChange={handleFilterChange} />
       <table className={styles.table}>
         <thead>
           <tr>
