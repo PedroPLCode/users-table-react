@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
   return (
     <div className={styles.footerContainer}>
       <a href="https://github.com/PedroPLCode/" target="_blank" rel="noopener noreferrer">
-        Piotr Gaszczyński
+        Piotr Gaszczyński GitHub repo
       </a>
     </div>
   );
