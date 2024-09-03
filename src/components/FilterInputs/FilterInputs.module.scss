@@ -1,21 +1,29 @@
+@import '../../styles/variables.scss';
+
 .filterInputs {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $margin-base;
+  gap: 10px;
+  
+  input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: $font-size-base;
+    transition: all 0.3s ease;
     
-    input {
-      flex: 1;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 14px;
-      transition: all 0.3s ease;
-      
-      &:focus {
-        border-color: #007bff;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        outline: none;
-      }
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: 0 0 5px rgba($primary-color, 0.5);
+      outline: none;
     }
   }
+}
+
+@media (max-width: $media-border) {
+  .filterInputs {
+    flex-direction: column;
+  }
+}

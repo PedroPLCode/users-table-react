@@ -1,26 +1,28 @@
+@import '../../styles/variables.scss';
+
 .row {
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-  
-    &:hover {
-      background-color: #e9f5ff;
-    }
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e9f5ff;
   }
-  
+}
+
+.cell {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: $font-size-base;
+  color: $text-color;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+@media (max-width: $media-border) {
   .cell {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-    font-size: 14px;
-    color: #333;
-  
-    &:hover {
-      color: #007bff;
-    }
+    padding: 10px 8px;
   }
-  
-  @media (max-width: 768px) {
-    .cell {
-      padding: 10px 8px;
-    }
-  }  
+}

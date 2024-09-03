@@ -1,0 +1,28 @@
+@import '../../styles/variables.scss';
+
+.headerContainer {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: $margin-base;
+  background-color: $primary-color;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: $border-radius;
+
+  h1 {
+    margin: 0;
+    font-size: $font-size-large;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: $media-border) {
+  .headerContainer {
+    padding: 15px;
+    
+    h1 {
+      font-size: 1.5rem; 
+    }
+  }
+}
