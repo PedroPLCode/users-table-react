@@ -1,8 +1,8 @@
 # User Managment Table
 
 Sinple User Managnemt Table, fetching user data from Mock API and displays as Table. Simple scss styles and effective responsive design.
-Allows to dynamically filter results by user input with real-time updates. On big screens by name, usermane, email and phone. On smaller screens only by name and username.
-Allows to display each user details in separate module.
+Allows to dynamically filter results by user input with real-time updates. On big screens by name, usermane, email and phone. On smaller mobile screens only by name and username.
+Allows to display each user details separate (with more informations - website and google maps address)
 
 ## Live link
 
