@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState, AppDispatch } from '../../redux/store';
-import { fetchUsers, setFilter, User } from '../../redux/userSlice.ts';
+import { RootState, AppDispatch } from '../../../redux/store.ts';
+import { fetchUsers, setFilter, User } from '../../../redux/userSlice.ts';
 import UserRow from '../UserRow/UserRow.tsx';
 import FilterInputs from '../FilterInputs/FilterInputs.tsx';
 import UserDetails from '../UserDetails/UserDetails.tsx';

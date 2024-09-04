@@ -1,7 +1,7 @@
 import React from 'react';
-import UserTable from './components/userTable/userTable.tsx';
-import Header from './views/Header/Header.tsx';
-import Footer from './views/Footer/Footer.tsx';
+import UserTable from './components/features/userTable/userTable.tsx';
+import Header from './components/views/Header/Header.tsx';
+import Footer from './components/views/Footer/Footer.tsx';
 
 function App() {
   return (

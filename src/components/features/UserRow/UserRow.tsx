@@ -1,5 +1,5 @@
 import React from 'react';
-import { User } from '../../redux/userSlice.ts';
+import { User } from '../../../redux/userSlice.ts';
 import styles from './UserRow.module.scss';
 
 interface UserRowProps {
