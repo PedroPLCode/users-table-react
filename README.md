@@ -6,7 +6,7 @@ Allows to display each user details in separate module.
 
 ## Live link
 
-http://http://ropeaccess.pro/user-table
+http://javascriptblog.blackzebra.pl/
 
 ### `npm start`
 
